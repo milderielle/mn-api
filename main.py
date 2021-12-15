@@ -12,9 +12,13 @@ from fastapi.responses import PlainTextResponse
 
 app = FastAPI()
 
+
 def result(res):
     return {"result":res}
 
+def mild():
+    return "Hello Mild"
+    
 def bmi():
     weight=int(input("ป้อนน้ำหนักของคุณ (kg.) :"))
     hight=int(input("ป้อนส่วนสูงของคุณ (cm) :"))
@@ -23,9 +27,6 @@ def bmi():
     bmi=weight/(hight**2)
 
     print("BMI =" ,bmi)
-    
-def mild():
-    return "Hello Mild"
 
 @app.get("/")
 async def main():
