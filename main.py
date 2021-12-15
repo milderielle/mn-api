@@ -16,9 +16,11 @@ app = FastAPI()
 def result(res):
     return {"result":res}
 
+@app.get("/mild")
 def mild():
     return "Hello Mild"
-    
+
+@app.get("/bmi")
 def bmi():
     weight=int(input("ป้อนน้ำหนักของคุณ (kg.) :"))
     hight=int(input("ป้อนส่วนสูงของคุณ (cm) :"))
