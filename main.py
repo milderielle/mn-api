@@ -15,6 +15,9 @@ app = FastAPI()
 def result(res):
     return {"result":res}
 
+def mild():
+    return "Hello Mild"
+    
 @app.get("/")
 async def main():
     return 'Hello World'
