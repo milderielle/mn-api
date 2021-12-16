@@ -21,11 +21,8 @@ def mild():
     return "Hello Mild"
 
 @app.get("/E")
-def E(m,c):
-    return m*c**2
-    m=9.1
-    c=2.9
-    print (E(m,c))
+def f(x,y,z) :
+    print((x**2+y**2+z**2)**0.5)
 
 @app.get("/bmi")
 def bmi():
