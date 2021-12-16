@@ -20,6 +20,13 @@ def result(res):
 def mild():
     return "Hello Mild"
 
+@app.get("/E")
+def E(m,c):
+    return m*c**2
+    m=9.1
+    c=2.9
+    print (E(m,c))
+
 @app.get("/bmi")
 def bmi():
     weight=int(input("ป้อนน้ำหนักของคุณ (kg.) :"))
