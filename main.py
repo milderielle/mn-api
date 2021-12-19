@@ -20,19 +20,15 @@ def result(res):
 def mild():
     return "Hello Mild"
 
-@app.get("/E")
-def f(x,y,z) :
-    print((x**2+y**2+z**2)**0.5)
-
 @app.get("/bmi")
-def bmi():
-    weight=int(input("ป้อนน้ำหนักของคุณ (kg.) :"))
-    hight=int(input("ป้อนส่วนสูงของคุณ (cm) :"))
+def bmi(h:int=1,w:int=0):
+    bmi = w/(h/100)**2
+    if bmi < 24:
+        desc = "หุ่นดีจัง"
+    else:
+        desc = "ออกกำลังกายบ้างนะ"
 
-    hight/=100
-    bmi=weight/(hight**2)
-
-    print("BMI =" ,bmi)
+    return result        
 
 @app.get("/")
 async def main():
