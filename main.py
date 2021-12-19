@@ -35,6 +35,19 @@ def bmi(h:int=1,w:int=0):
 
     return res
 
+@app.get("/course")
+def course(hours:int=1, scores:int=0):
+    price = hours*250
+
+    if scores <= 5:
+        desc = "Fail (พยายามอีกหน่อยนะ!!!)"
+    else :
+        desc = "Pass (คุณทำได้ดีแล้ว!!!)"
+    
+    res = {"price":price, "ประเมิณผลคะแนน":desc}   
+        
+
+
 @app.get("/")
 async def main():
     return 'Hello World'
