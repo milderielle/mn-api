@@ -20,15 +20,20 @@ def result(res):
 def mild():
     return "Hello Mild"
 
+def result(res):
+    return {"result":res}
+
 @app.get("/bmi")
 def bmi(h:int=1,w:int=0):
-    bmi = w/(h/100)**2
+    bmi = w/((h/100)**2)
     if bmi < 24:
         desc = "หุ่นดีจัง"
     else:
         desc = "ออกกำลังกายบ้างนะ"
 
-    return result        
+    res = {"bmi":bmi, "desc":desc}      
+
+    return res
 
 @app.get("/")
 async def main():
