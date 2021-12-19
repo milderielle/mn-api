@@ -44,7 +44,8 @@ def course(hours:int=1, scores:int=0):
     else :
         desc = "Pass (คุณทำได้ดีแล้ว!!!)"
     
-    res = {"price":price, "ประเมิณผลคะแนน":desc}   
+    res = {"price":price, "ประเมิณผลคะแนน":desc}
+    return res
         
 
 
